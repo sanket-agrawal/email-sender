@@ -25,7 +25,18 @@ export const uploadResume = async (req, res) => {
 
 export const uploadExcel = async ( req , res) => {
     try{
-
+        const excel = req.files.file;
+        if(excel){
+            
+        }else{
+            console.log('No Excel File Found');
+            return res.status(204).json({
+                message : 'Excel Missing!',
+            })
+        }
+        return res.status(200).json({
+            message :"Done",
+        })
     }catch(error){
         console.log(error?.message);
         res.status(500).json({

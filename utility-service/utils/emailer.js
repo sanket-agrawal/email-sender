@@ -21,12 +21,12 @@ export const sendEmail = async (data,recipients) => {
         const pdfBuffer = decodeBase64();
 
         const msg = {
-            from : from,
+            from : `Sanket Agrawal ${from}`,
             subject : data.subject,
             html : data.html,
             attachments: [
                 {
-                  filename: 'resume.pdf',
+                  filename: 'sanket_agrawal_resume.pdf',
                   content: pdfBuffer,
                   encoding: 'base64',
                 },

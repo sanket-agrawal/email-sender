@@ -24,10 +24,10 @@ export const sendBulkEmail = async ( req , res ) => {
 
 export const TestingMethod = async ( req , res ) => {
     try{
-        const recipients = ['sanket@ataloud.com','thesanketagrawal@gmail.com'];
+        const recipients = ['thesanketagrawal@gmail.com'];
         const data = {
             subject : 'Testing',
-            html : mailBody('Sanket'),
+            html : mailBody(),
         }
         await sendEmail(data,recipients);
 
