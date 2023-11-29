@@ -1,0 +1,17 @@
+{
+  "name": "utility-service",
+  "version": "1.0.0",
+  "description": "Email Sender for ALLL",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.2",
+    "xlsx": "^0.18.5"
+  }
+}
