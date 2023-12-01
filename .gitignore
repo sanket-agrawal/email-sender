@@ -3,4 +3,4 @@ node_modules
 buildspec.yml
 application-start.sh
 .env*.local
-.xlsx
+* .xlsx
