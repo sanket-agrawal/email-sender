@@ -1,4 +1,5 @@
 import { fileToBase64 } from "../utils/fileHelper.js";
+import { getDataFromExcel } from "../utils/helper.js";
 
 export const uploadResume = async (req, res) => {
     try{
@@ -27,7 +28,7 @@ export const uploadExcel = async ( req , res) => {
     try{
         const excel = req.files.file;
         if(excel){
-            
+          await getDataFromExcel();
         }else{
             console.log('No Excel File Found');
             return res.status(204).json({
