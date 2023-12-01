@@ -1,17 +1,27 @@
-export const mailBody = (receiver,company) => {
+import dotenv from 'dotenv';
+dotenv.config();
 
-    const body = `
+const CANDIDATE = process.env.CANDIDATE_NAME;
+const SKILLS =  process.env.SKILLS;
+const DEFAULT_POS = process.env.DEFAULT_POSITION;
+
+
+export const mailBody = (receiver, company, position) => {
+
+  const body = `
     <html>
     <head>
      
     </head>
     <body>
-      <p>Dear ${receiver ? receiver : `Team`},</p>
+      <p>Dear ${receiver ? receiver : "Team"},</p>
       <p>
-        I hope this email finds you well. My name is Sanket Agrawal, and I am writing to express my interest in the Backend Developer position ${company ? `at ${company}` : "" }.
+        I hope this email finds you well. My name is ${CANDIDATE}, and I am writing to express my interest in the ${position ? `<span style="font-weight: bold;">${position}</span>` : `<span style="font-weight: bold;">${DEFAULT_POS} position</span>`}
+        ${company ? `<span style="font-weight: normal;">at</span> <span style="font-weight: bold;">${company}</span>` : "" }.
       </p>
       <p>
-        In my current role as a Full Stack Developer at Ataloud Technologies, I have gained valuable experience in Node.js, Express.js, Spring Boot Java, MySQL, MongoDB, and React.js.
+        In my current role as a Full Stack Developer at Ataloud Technologies, I have gained valuable experience in 
+        <span style="font-weight: bold;">${SKILLS}</span>.
       </p>
       <p>
         Attached is my resume that provides further details about my professional background.
@@ -22,18 +32,18 @@ export const mailBody = (receiver,company) => {
       ${signature()}
     </body>
     </html>
-    `;
-    
-    return body;
-    
-}
+  `;
+
+  return body;
+};
+
 
 
 export const signature =  () => {
     const sign = `
     <p>
     Best regards,<br>
-    Sanket Agrawal<br>
+    ${CANDIDATE}<br>
     +91-7387391619<br>
     <a href="mailto:mailsanketagrawal@gmail.com">mailsanketagrawal@gmail.com</a>
   </p>

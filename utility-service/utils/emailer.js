@@ -15,7 +15,7 @@ const smtpConfig = nodemailer.createTransport({
 
 
 
-export const sendEmail = async (data,recipients) => {
+export const sendEmail = async (data,recipient) => {
     try {
 
         const pdfBuffer = decodeBase64();
@@ -33,9 +33,9 @@ export const sendEmail = async (data,recipients) => {
               ],
         };
 
-        for(let i = 0; i < recipients.length ; i++){
+       
 
-            msg.to = recipients[i];
+            msg.to = recipient;
 
             await smtpConfig.sendMail(msg)
             .then((res)=>{
@@ -43,7 +43,7 @@ export const sendEmail = async (data,recipients) => {
             }).catch((err) => {
                 console.log({err});
             })
-        }
+        
 
         
     } catch (error) {
