@@ -2,4 +2,9 @@ node_modules
 * node_modules
 buildspec.yml
 application-start.sh
-.env
+.env*.local
+# Ignore Excel files
+*.xlsx
+*.xlsb
+*.xlsm
+*.xls
