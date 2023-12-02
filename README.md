@@ -13,7 +13,7 @@ c. MongoDB
 It is in early stage so we can use it by Cloning it and running it locally.
 
 STEPS :
-a. git clone https://github.com/sanket-agrawal/email-sender.git
+a. git clone https://github.com/sanket-agrawal/email-sender.git <br/>
 b. cd ./utility-service [in CMD]
 c. code .   [in CMD]
 d. create .env.local in utitlity-service and add your config
